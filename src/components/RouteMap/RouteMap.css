@@ -1,0 +1,144 @@
+.route-map {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #bdeee8;
+  box-shadow: inset 0 0 0 1px rgba(6, 47, 67, 0.06);
+}
+
+.route-map svg {
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--map-aspect, 0.9);
+  touch-action: manipulation;
+}
+
+.route-map__geo-labels text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  fill: #b99a68;
+  opacity: 0.6;
+}
+
+.route-map__geo-labels .route-map__sea-label {
+  fill: #ffffff;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+.route-map__route {
+  fill: none;
+  stroke: var(--ocean-700);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.35;
+}
+
+.route-map__route.is-active {
+  stroke: var(--coral-600);
+  opacity: 0.95;
+  animation: route-march 1.6s linear infinite;
+}
+
+@keyframes route-march {
+  to {
+    stroke-dashoffset: calc(var(--period, 10) * -2);
+  }
+}
+
+.route-map__pin {
+  transition: opacity 0.3s;
+}
+
+.route-map__pin[role='button'] {
+  cursor: pointer;
+}
+
+.route-map__pin[role='button']:focus-visible {
+  outline: none;
+}
+
+.route-map__pin[role='button']:focus-visible .route-map__dot {
+  stroke: var(--coral-500);
+}
+
+.route-map__dot {
+  fill: var(--turq-500);
+  stroke: #fff;
+  transition:
+    fill 0.3s,
+    r 0.3s var(--ease-out);
+}
+
+.route-map__pin.is-base .route-map__dot {
+  fill: var(--ocean-700);
+}
+
+.route-map__pin.is-in-day .route-map__dot {
+  fill: var(--coral-500);
+}
+
+.route-map--day .route-map__dot {
+  fill: var(--ocean-700);
+}
+
+.route-map--day .route-map__pin.is-active .route-map__dot,
+.route-map__pin.is-active .route-map__dot {
+  fill: var(--coral-500);
+}
+
+.route-map__pin.is-dim {
+  opacity: 0.45;
+}
+
+.route-map__pulse {
+  fill: var(--coral-500);
+  opacity: 0.4;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pin-pulse 1.6s var(--ease-out) infinite;
+}
+
+@keyframes pin-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.route-map__num {
+  fill: #fff;
+  font-family: var(--font-body);
+  font-weight: 800;
+  pointer-events: none;
+}
+
+.route-map__label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  fill: var(--ocean-900);
+  paint-order: stroke;
+  stroke: rgba(255, 251, 244, 0.95);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.route-map__note {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--ink-700);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}

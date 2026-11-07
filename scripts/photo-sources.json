@@ -1,0 +1,93 @@
+[
+  {
+    "id": "antunes",
+    "file": "File:Praia de Antunes-3 (51723356401).jpg",
+    "alt": "Faixa de areia e mar azul-turquesa na Praia de Antunes, em Maragogi",
+    "focus": "60% 50%"
+  },
+  {
+    "id": "maragogi-piscinas",
+    "file": "File:Sargentinho - Piscinas naturais de Maragogi - Alagoas.jpg",
+    "alt": "Peixe sargentinho nas piscinas naturais de Maragogi"
+  },
+  {
+    "id": "xareu",
+    "file": "File:Praia de Xaréu-3 (51724009859).jpg",
+    "alt": "Praia de Xaréu, em Maragogi, com mar verde-azulado e coqueiros"
+  },
+  {
+    "id": "sao-bento",
+    "file": "File:Praia de São Bento-3 (51723998754).jpg",
+    "alt": "Coqueiros inclinados sobre a Praia de São Bento, em Maragogi"
+  },
+  {
+    "id": "patacho",
+    "file": "File:Praia do Patacho - Alagoas (11741929493).jpg",
+    "alt": "Águas rasas e transparentes da Praia do Patacho com coqueiral ao fundo"
+  },
+  {
+    "id": "toque",
+    "file": "File:Marco Ankosqui Praia do Toque São Miguel dos Milagres AL (27653004488).jpg",
+    "alt": "Praia do Toque, em São Miguel dos Milagres, com espreguiçadeiras na areia"
+  },
+  {
+    "id": "milagres",
+    "file": "File:Praia em São Miguel dos Milagres, AL.jpg",
+    "alt": "Praia em São Miguel dos Milagres com coqueiros e céu azul"
+  },
+  {
+    "id": "marceneiro",
+    "file": "File:Praia do Marceneiro - São Miguel dos Milagres (51729288329).jpg",
+    "alt": "Praia do Marceneiro com coqueiros e barcos no mar"
+  },
+  {
+    "id": "ponta-verde",
+    "file": "File:Ponta Verde Lighthouse landscape - Maceió, Brazil (edited).jpg",
+    "alt": "Farol de Ponta Verde sobre os arrecifes, em Maceió",
+    "widths": [
+      640,
+      1024,
+      1600
+    ]
+  },
+  {
+    "id": "pajucara",
+    "file": "File:Praia Pajuçara Maceió 04 2015 3253.JPG",
+    "alt": "Jangadas coloridas na Praia de Pajuçara, em Maceió"
+  },
+  {
+    "id": "marco-corais",
+    "file": "File:Marco dos Corais, Maceió (52143550962).jpg",
+    "alt": "Passarela do Marco dos Corais sobre o mar, em Maceió"
+  },
+  {
+    "id": "orla-maceio",
+    "file": "File:Orla de Maceió 2023.jpg",
+    "alt": "Vista aérea da orla de Maceió com coqueiros e mar azul-turquesa"
+  },
+  {
+    "id": "entardecer",
+    "file": "File:Orla de Ponta Verde, Maceió-AL.JPG",
+    "alt": "Entardecer na orla de Ponta Verde, em Maceió"
+  },
+  {
+    "id": "frances",
+    "file": "File:Pombos na Praia do Francês.JPG",
+    "alt": "Praia do Francês, em Marechal Deodoro, com mar calmo e coqueiros"
+  },
+  {
+    "id": "gunga",
+    "file": "File:Praia-do-gunga-2012-09-22.JPG",
+    "alt": "Areia dourada e coqueiral na Praia do Gunga"
+  },
+  {
+    "id": "barra",
+    "file": "File:Barra de São Miguel - Alagoas (7522728350).jpg",
+    "alt": "Praia da Barra de São Miguel com areia ondulada e mar calmo"
+  },
+  {
+    "id": "mirante-gunga",
+    "file": "File:Mirante Praia do Gunga.jpg",
+    "alt": "Vista do Mirante do Gunga sobre o coqueiral e o mar"
+  }
+]

@@ -1,0 +1,198 @@
+import type { Place } from '../types/itinerary';
+
+/**
+ * Locais citados no roteiro.
+ *
+ * - `mapsQuery` vira um link de busca do Google Maps (sem chave de API).
+ * - `coords` são posições APROXIMADAS usadas somente para posicionar os
+ *   marcadores no mapa esquemático. Não são usadas para traçar rotas.
+ * - `photo` aponta para um id de `src/data/photos.ts`.
+ */
+export const places: Record<string, Place> = {
+  maceio: {
+    id: 'maceio',
+    name: 'Maceió',
+    area: 'Capital de Alagoas',
+    mapsQuery: 'Maceió, Alagoas',
+    coords: [-9.6658, -35.7353],
+    photo: 'pajucara',
+  },
+  aeroporto: {
+    id: 'aeroporto',
+    name: 'Aeroporto de Maceió',
+    area: 'Maceió',
+    mapsQuery: 'Aeroporto Internacional de Maceió Zumbi dos Palmares',
+    coords: [-9.5108, -35.7917],
+  },
+  maragogi: {
+    id: 'maragogi',
+    name: 'Centro de Maragogi',
+    area: 'Maragogi',
+    mapsQuery: 'Centro, Maragogi - AL',
+    coords: [-9.0122, -35.2225],
+    photo: 'maragogi',
+  },
+  piscinas: {
+    id: 'piscinas',
+    name: 'Piscinas naturais de Maragogi',
+    area: 'Maragogi',
+    mapsQuery: 'Piscinas naturais de Maragogi - AL',
+    coords: [-8.99, -35.17],
+    photo: 'maragogi-piscinas',
+  },
+  antunes: {
+    id: 'antunes',
+    name: 'Praia de Antunes',
+    area: 'Maragogi',
+    mapsQuery: 'Praia de Antunes, Maragogi - AL',
+    coords: [-8.975, -35.195],
+    photo: 'antunes',
+  },
+  xareu: {
+    id: 'xareu',
+    name: 'Praia de Xaréu',
+    area: 'Maragogi',
+    mapsQuery: 'Praia de Xaréu, Maragogi - AL',
+    coords: [-9.035, -35.24],
+    photo: 'xareu',
+  },
+  croas: {
+    id: 'croas',
+    name: 'Crôas de São Bento',
+    area: 'São Bento, Maragogi',
+    mapsQuery: 'Crôas de São Bento, Maragogi - AL',
+    coords: [-9.07, -35.26],
+    photo: 'sao-bento',
+  },
+  patacho: {
+    id: 'patacho',
+    name: 'Praia do Patacho',
+    area: 'Porto de Pedras',
+    mapsQuery: 'Praia do Patacho, Porto de Pedras - AL',
+    coords: [-9.125, -35.285],
+    photo: 'patacho',
+  },
+  laje: {
+    id: 'laje',
+    name: 'Praia da Laje',
+    area: 'Porto de Pedras',
+    mapsQuery: 'Praia da Laje, Porto de Pedras - AL',
+    coords: [-9.165, -35.3],
+    photo: 'laje',
+  },
+  toque: {
+    id: 'toque',
+    name: 'Praia do Toque',
+    area: 'São Miguel dos Milagres',
+    mapsQuery: 'Praia do Toque, São Miguel dos Milagres - AL',
+    coords: [-9.235, -35.35],
+    photo: 'toque',
+  },
+  milagres: {
+    id: 'milagres',
+    name: 'São Miguel dos Milagres',
+    area: 'Litoral norte de Alagoas',
+    mapsQuery: 'Praia de São Miguel dos Milagres - AL',
+    coords: [-9.265, -35.372],
+    photo: 'milagres',
+  },
+  marceneiro: {
+    id: 'marceneiro',
+    name: 'Praia do Marceneiro',
+    area: 'Litoral norte de Alagoas',
+    mapsQuery: 'Praia do Marceneiro, Alagoas',
+    coords: [-9.3, -35.41],
+    photo: 'marceneiro',
+  },
+  ipioca: {
+    id: 'ipioca',
+    name: 'Praia de Ipioca',
+    area: 'Litoral norte de Maceió',
+    mapsQuery: 'Praia de Ipioca, Maceió - AL',
+    coords: [-9.525, -35.595],
+    photo: 'ipioca',
+  },
+  sereia: {
+    id: 'sereia',
+    name: 'Praia da Sereia',
+    area: 'Litoral norte de Maceió',
+    mapsQuery: 'Praia da Sereia, Maceió - AL',
+    coords: [-9.565, -35.64],
+    photo: 'sereia',
+  },
+  farol: {
+    id: 'farol',
+    name: 'Farol de Ponta Verde',
+    area: 'Ponta Verde, Maceió',
+    mapsQuery: 'Farol da Ponta Verde, Maceió - AL',
+    coords: [-9.662, -35.695],
+    photo: 'ponta-verde',
+  },
+  pontaVerde: {
+    id: 'pontaVerde',
+    name: 'Praia de Ponta Verde',
+    area: 'Maceió',
+    mapsQuery: 'Praia de Ponta Verde, Maceió - AL',
+    coords: [-9.664, -35.701],
+    photo: 'ponta-verde',
+  },
+  pajucara: {
+    id: 'pajucara',
+    name: 'Praia de Pajuçara',
+    area: 'Maceió',
+    mapsQuery: 'Praia de Pajuçara, Maceió - AL',
+    coords: [-9.6685, -35.716],
+    photo: 'pajucara',
+  },
+  corais: {
+    id: 'corais',
+    name: 'Marco dos Corais',
+    area: 'Maceió',
+    mapsQuery: 'Marco dos Corais, Maceió - AL',
+    coords: [-9.667, -35.709],
+    photo: 'marco-corais',
+  },
+  orla: {
+    id: 'orla',
+    name: 'Orla de Maceió',
+    area: 'Maceió',
+    mapsQuery: 'Orla de Maceió - AL',
+    coords: [-9.655, -35.7],
+    photo: 'orla-maceio',
+  },
+  frances: {
+    id: 'frances',
+    name: 'Praia do Francês',
+    area: 'Marechal Deodoro',
+    mapsQuery: 'Praia do Francês, Marechal Deodoro - AL',
+    coords: [-9.77, -35.838],
+    photo: 'frances',
+  },
+  gunga: {
+    id: 'gunga',
+    name: 'Praia do Gunga',
+    area: 'Roteiro',
+    mapsQuery: 'Praia do Gunga, Roteiro - AL',
+    coords: [-9.855, -35.925],
+    photo: 'gunga',
+  },
+  mirante: {
+    id: 'mirante',
+    name: 'Mirante do Gunga',
+    area: 'Roteiro',
+    mapsQuery: 'Mirante do Gunga, Roteiro - AL',
+    coords: [-9.865, -35.94],
+    photo: 'mirante-gunga',
+  },
+  barra: {
+    id: 'barra',
+    name: 'Barra de São Miguel',
+    area: 'Litoral sul de Alagoas',
+    mapsQuery: 'Praia da Barra de São Miguel - AL',
+    coords: [-9.835, -35.895],
+    photo: 'barra',
+  },
+};
+
+export const mapsUrl = (query: string) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;

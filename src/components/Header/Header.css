@@ -1,0 +1,121 @@
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  padding-top: var(--safe-top);
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s,
+    backdrop-filter 0.3s;
+  color: var(--white);
+}
+
+.site-header.is-solid {
+  background: rgba(255, 251, 244, 0.86);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: 0 1px 0 rgba(6, 47, 67, 0.08);
+  color: var(--ocean-900);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--header-h);
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: max(12px, var(--safe-left)) max(8px, var(--safe-right));
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-right: auto;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header__logo {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.site-header__logo svg {
+  width: 30px;
+  height: 30px;
+}
+
+.site-header__name {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.site-header__name span {
+  color: var(--coral-500);
+  font-style: italic;
+}
+
+.site-header:not(.is-solid) .site-header__name span {
+  color: var(--sun-400);
+}
+
+.site-header__links {
+  display: none;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.site-header .icon-btn {
+  color: inherit;
+}
+
+.site-header:not(.is-solid) .icon-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.site-header .icon-btn.is-on {
+  background: var(--sun-200);
+  color: var(--ocean-900);
+}
+
+@media (min-width: 1024px) {
+  .site-header__inner {
+    padding-inline: 32px;
+    gap: 16px;
+  }
+
+  .site-header__links {
+    display: flex;
+    gap: 4px;
+    margin-right: 12px;
+  }
+
+  .site-header__links a {
+    padding: 10px 14px;
+    border-radius: 999px;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+  }
+
+  .site-header__links a:hover {
+    background: rgba(20, 177, 169, 0.14);
+  }
+}

@@ -1,0 +1,138 @@
+.sheet {
+  padding: 0;
+  border: 0;
+  margin: auto 0 0 0;
+  width: 100%;
+  max-width: 100%;
+  max-height: min(88vh, 88dvh);
+  background: transparent;
+  color: inherit;
+  overflow: visible;
+}
+
+.sheet::backdrop {
+  background: rgba(6, 47, 67, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: fade-in 0.3s ease both;
+}
+
+.sheet[open] .sheet__panel {
+  animation: sheet-up 0.45s var(--ease-out) both;
+}
+
+.sheet__panel {
+  display: flex;
+  flex-direction: column;
+  max-height: min(88vh, 88dvh);
+  border-radius: 28px 28px 0 0;
+  background: var(--sand-50);
+  box-shadow: var(--shadow-lg);
+  padding-bottom: var(--safe-bottom);
+}
+
+.sheet__grabber {
+  width: 44px;
+  height: 5px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: var(--sand-300);
+}
+
+.sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px 10px 22px;
+  border-bottom: 1px solid var(--sand-200);
+}
+
+.sheet__header h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+}
+
+.sheet__header h2 svg {
+  color: var(--coral-500);
+  flex: none;
+}
+
+.sheet__body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 18px 22px 22px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sheet__footer {
+  padding: 12px 22px calc(14px);
+  border-top: 1px solid var(--sand-200);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes sheet-left {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html.has-sheet {
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .sheet {
+    margin: 0 0 0 auto;
+    width: 460px;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  .sheet__panel {
+    height: 100%;
+    max-height: 100%;
+    border-radius: 28px 0 0 28px;
+    padding-top: var(--safe-top);
+  }
+
+  .sheet[open] .sheet__panel {
+    animation-name: sheet-left;
+  }
+
+  .sheet__grabber {
+    display: none;
+  }
+
+  .sheet__header {
+    padding-top: 18px;
+  }
+}

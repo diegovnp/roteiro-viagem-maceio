@@ -1,0 +1,87 @@
+.smart-img {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.smart-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.03);
+  transition:
+    opacity 0.6s var(--ease-out),
+    transform 1.2s var(--ease-out);
+}
+
+.smart-img.is-loaded img {
+  opacity: 1;
+  transform: none;
+}
+
+.smart-img__credit {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  max-width: calc(100% - 16px);
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(6, 47, 67, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 2;
+}
+
+.smart-img--fallback {
+  background: linear-gradient(180deg, var(--turq-100) 0%, var(--sun-200) 60%, var(--sand-200) 100%);
+  display: grid;
+  place-items: end start;
+}
+
+.smart-img__fb-sun {
+  position: absolute;
+  top: 12%;
+  right: 12%;
+  width: 22%;
+  max-width: 120px;
+  color: var(--sun-400);
+}
+
+.smart-img__fb-palm {
+  position: absolute;
+  left: 8%;
+  bottom: 14%;
+  height: 62%;
+  width: auto;
+  color: var(--turq-600);
+  opacity: 0.85;
+}
+
+.smart-img__fb-sea {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: 30%;
+  fill: var(--turq-400);
+  opacity: 0.8;
+}
+
+.smart-img__fb-label {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 14px 16px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ocean-800);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
