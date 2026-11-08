@@ -39,7 +39,7 @@ const OVERVIEW_LABELS: Record<string, 'left' | 'right'> = {
   aeroporto: 'left',
   frances: 'left',
   barra: 'right',
-  gunga: 'left',
+  gunga: 'right',
 };
 
 const BASES = ['maragogi', 'maceio'];
@@ -54,8 +54,8 @@ export function RouteMap({ mode, dayNumber, activePlaceId, onPlaceClick, classNa
       return fitViewBox(
         dayPlaces.map((id) => project(places[id].coords)),
         aspect,
-        110,
-        0.45,
+        70,
+        0.4,
       );
     }
     // Visão geral: enquadra o litoral visitado (Maragogi → Gunga)
@@ -136,22 +136,22 @@ export function RouteMap({ mode, dayNumber, activePlaceId, onPlaceClick, classNa
         preserveAspectRatio="xMidYMid slice"
       >
         <defs>
-          <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+          <linearGradient id={`sea-${mode}`} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor="#bdeee8" />
             <stop offset="1" stopColor="#7fd6d0" />
           </linearGradient>
-          <pattern id="sea-lines" width="60" height="24" patternUnits="userSpaceOnUse">
+          <pattern id={`sea-lines-${mode}`} width="60" height="24" patternUnits="userSpaceOnUse" patternTransform={`scale(${k})`}>
             <path d="M0 12c10-6 20-6 30 0s20 6 30 0" fill="none" stroke="#fff" strokeOpacity=".35" strokeWidth="1.5" />
           </pattern>
-          <pattern id="land-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+          <pattern id={`land-dots-${mode}`} width="14" height="14" patternUnits="userSpaceOnUse" patternTransform={`scale(${k})`}>
             <circle cx="2" cy="2" r="1.1" fill="#d8c294" />
           </pattern>
         </defs>
 
-        <rect x={-200} y={-200} width={MAP_W + 400} height={MAP_H + 400} fill="url(#sea)" />
-        <rect x={-200} y={-200} width={MAP_W + 400} height={MAP_H + 400} fill="url(#sea-lines)" />
+        <rect x={-200} y={-200} width={MAP_W + 400} height={MAP_H + 400} fill={`url(#sea-${mode})`} />
+        <rect x={-200} y={-200} width={MAP_W + 400} height={MAP_H + 400} fill={`url(#sea-lines-${mode})`} />
         <path d={landPath} fill="#f6ead2" />
-        <path d={landPath} fill="url(#land-dots)" opacity=".7" />
+        <path d={landPath} fill={`url(#land-dots-${mode})`} opacity=".7" />
         <path d={coastPath} fill="none" stroke="#fff" strokeWidth={6 * k} strokeLinejoin="round" opacity=".8" />
         <path d={coastPath} fill="none" stroke="#e2c995" strokeWidth={1.6 * k} strokeLinejoin="round" />
 
@@ -160,7 +160,7 @@ export function RouteMap({ mode, dayNumber, activePlaceId, onPlaceClick, classNa
             <text x={170} y={420} fontSize={34} letterSpacing={12}>
               ALAGOAS
             </text>
-            <text x={600} y={800} fontSize={24} letterSpacing={6} className="route-map__sea-label">
+            <text x={500} y={820} fontSize={24} letterSpacing={6} className="route-map__sea-label">
               OCEANO ATLÂNTICO
             </text>
           </g>
@@ -173,8 +173,8 @@ export function RouteMap({ mode, dayNumber, activePlaceId, onPlaceClick, classNa
             id={`${routeId}-${seg.n}`}
             d={toPath(seg.ids)}
             className={`route-map__route ${seg.n === dayNumber ? 'is-active' : ''}`}
-            strokeWidth={(seg.n === dayNumber ? 3.2 : 2.2) * k}
-            strokeDasharray={`${2 * k} ${(seg.n === dayNumber ? 8 : 7) * k}`}
+            strokeWidth={(mode === 'day' ? 5 : seg.n === dayNumber ? 3.2 : 2.2) * k}
+            strokeDasharray={`${(mode === 'day' ? 3 : 2) * k} ${(mode === 'day' ? 12 : seg.n === dayNumber ? 8 : 7) * k}`}
             style={{ ['--period' as string]: String(10 * k) }}
           />
         ))}
@@ -197,7 +197,7 @@ export function RouteMap({ mode, dayNumber, activePlaceId, onPlaceClick, classNa
           const isBase = BASES.includes(id);
           const stepIndex = mode === 'day' ? dayPlaces.indexOf(id) : -1;
           const label = mode === 'overview' ? OVERVIEW_LABELS[id] : undefined;
-          const r = (mode === 'day' ? 15 : isBase ? 10 : 6.5) * k * (isActive ? 1.25 : 1);
+          const r = (mode === 'day' ? 24 : isBase ? 10 : 6.5) * k * (isActive ? 1.25 : 1);
           const cls = [
             'route-map__pin',
             inDay && 'is-in-day',
@@ -230,9 +230,9 @@ export function RouteMap({ mode, dayNumber, activePlaceId, onPlaceClick, classNa
             >
               <title>{place.name}</title>
               {isActive && <circle className="route-map__pulse" r={r} />}
-              <circle r={r} className="route-map__dot" strokeWidth={2.5 * k} />
+              <circle r={r} className="route-map__dot" strokeWidth={(mode === 'day' ? 4 : 2.5) * k} />
               {stepIndex >= 0 && (
-                <text className="route-map__num" fontSize={15 * k} dy={5.2 * k} textAnchor="middle">
+                <text className="route-map__num" fontSize={24 * k} dy={8.4 * k} textAnchor="middle">
                   {stepIndex + 1}
                 </text>
               )}

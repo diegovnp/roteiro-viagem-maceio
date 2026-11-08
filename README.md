@@ -108,21 +108,31 @@ Cada atividade aceita:
 Marés ficam em `tide` (`height`, `time` e `note` opcional). Avisos especiais em `flags`
 (`multiStop`, `swappable`, `returnOnly`).
 
-### Trocar ou adicionar fotos
+### Fotos
 
-As fotos vêm do **Wikimedia Commons** (licenças livres) e são convertidas para WebP em vários tamanhos.
+Todas as fotos são do **Wikimedia Commons** (licenças livres), escolhidas uma a uma para corresponder ao local.
+Autor, licença e link de cada uma aparecem em **“Créditos das fotos”**, no rodapé, e também sobre cada imagem.
 
-1. Encontre a foto no [Commons](https://commons.wikimedia.org) e copie o título do arquivo (ex.: `File:Praia do Gunga 140.jpg`).
-2. Adicione/edite a entrada em `scripts/photo-sources.json` (`id`, `file`, `alt`).
-3. Rode:
+- A foto da abertura (Praia de Antunes) já está otimizada em `public/images/` (WebP em 3 tamanhos).
+- As demais são carregadas das **miniaturas oficiais do Commons** (`upload.wikimedia.org`, tamanhos padrão
+  500/960/1280/1920 px com `srcset`). Durante a criação do site o Wikimedia limitou os downloads feitos por script a
+  partir do servidor de desenvolvimento, por isso elas ainda não foram copiadas para o projeto.
+- Para **hospedar todas as fotos no próprio site** (recomendado), rode na sua máquina:
 
 ```bash
 npm run images
 ```
 
-O script baixa a foto, gera `public/images/<id>-<largura>.webp`, guarda autor e licença e atualiza
-`src/data/photos.ts` (os créditos aparecem no rodapé do site). Depois use o `id` em `cover` (dias) ou `photo` (locais).
-Se uma foto não existir, o site mostra uma ilustração no lugar — nunca uma imagem errada.
+O script baixa cada foto listada em `scripts/photo-sources.json`, gera `public/images/<id>-<largura>.webp`, guarda
+autor e licença e reescreve `src/data/photos.ts` — a partir daí nenhuma imagem depende de servidor externo.
+Depois, faça commit da pasta `public/images` e de `src/data/photos.ts`.
+
+Para **trocar ou adicionar** uma foto: encontre o arquivo no [Commons](https://commons.wikimedia.org), copie o título
+(ex.: `File:Praia do Gunga 140.jpg`), adicione/edite a entrada em `scripts/photo-sources.json` (`id`, `file`, `alt`) e
+rode `npm run images`. Use o `id` em `cover` (dias, em `itinerary.ts`) ou `photo` (locais, em `places.ts`).
+
+Se uma foto não existir ou falhar ao carregar, o site mostra uma ilustração no lugar — nunca uma imagem errada.
+Não foi encontrada foto livre da **Praia da Laje** nem do **centro de Maragogi**; esses locais ficam sem foto.
 
 ## Estrutura
 

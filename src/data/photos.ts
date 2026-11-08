@@ -197,6 +197,50 @@ const list: Photo[] = [
     }
   },
   {
+    "id": "ipioca",
+    "alt": "Vista aérea da Praia de Ipioca, com coqueiral e mar azul-turquesa",
+    "widths": [
+      500,
+      960,
+      1280,
+      1920
+    ],
+    "remote": {
+      "base": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Praia_de_Ipioca-002.jpg",
+      "file": "Praia_de_Ipioca-002.jpg"
+    },
+    "ratio": 1.3333,
+    "color": "#718778",
+    "credit": {
+      "author": "Cleferson Comarela",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Praia_de_Ipioca-002.jpg"
+    }
+  },
+  {
+    "id": "sereia",
+    "alt": "Estátua da sereia sobre os arrecifes na Praia da Sereia, em Maceió",
+    "widths": [
+      500,
+      960,
+      1280,
+      1920
+    ],
+    "remote": {
+      "base": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Monumento_na_Praia_da_Sereia_em_Alagoas.jpg",
+      "file": "Monumento_na_Praia_da_Sereia_em_Alagoas.jpg"
+    },
+    "ratio": 1.5,
+    "color": "#6ea3be",
+    "credit": {
+      "author": "MarinelsonAlmeidaSilva / Marinelson Almeida - Traveling through Brazil from Niteroi, Brasil",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Monumento_na_Praia_da_Sereia_em_Alagoas.jpg"
+    }
+  },
+  {
     "id": "pajucara",
     "alt": "Jangadas coloridas na Praia de Pajuçara, em Maceió",
     "widths": [

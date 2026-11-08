@@ -55,6 +55,7 @@
 }
 
 .site-header__name {
+  white-space: nowrap;
   font-family: var(--font-display);
   font-weight: 650;
   font-size: 1.25rem;
@@ -117,5 +118,15 @@
 
   .site-header__links a:hover {
     background: rgba(20, 177, 169, 0.14);
+  }
+}
+
+@media (max-width: 359px) {
+  .site-header__name span {
+    display: none;
+  }
+
+  .site-header__brand {
+    gap: 8px;
   }
 }

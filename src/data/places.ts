@@ -30,7 +30,6 @@ export const places: Record<string, Place> = {
     area: 'Maragogi',
     mapsQuery: 'Centro, Maragogi - AL',
     coords: [-9.0122, -35.2225],
-    photo: 'maragogi',
   },
   piscinas: {
     id: 'piscinas',
@@ -78,7 +77,6 @@ export const places: Record<string, Place> = {
     area: 'Porto de Pedras',
     mapsQuery: 'Praia da Laje, Porto de Pedras - AL',
     coords: [-9.165, -35.3],
-    photo: 'laje',
   },
   toque: {
     id: 'toque',
