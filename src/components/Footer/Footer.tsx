@@ -1,4 +1,4 @@
-import { ArrowUp, Camera, Info } from 'lucide-react';
+import { ArrowUp, Camera, Info, Wallet } from 'lucide-react';
 import { photos } from '../../data/photos';
 import { ShellIcon, WaveDivider } from '../Decor/Decor';
 import './Footer.css';
@@ -57,6 +57,9 @@ export function Footer() {
             <p>
               <ShellIcon className="site-footer__shell" /> Roteiro Maceió · 11 a 18 de novembro de 2026
             </p>
+            <a href="/gastos.html" className="btn btn--ghost btn--small">
+              <Wallet size={16} aria-hidden="true" /> Gastos da viagem
+            </a>
             <a href="#topo" className="btn btn--ghost btn--small">
               <ArrowUp size={16} aria-hidden="true" /> Voltar ao topo
             </a>

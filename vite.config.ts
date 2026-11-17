@@ -21,5 +21,11 @@ export default defineConfig({
   plugins: [react(), injectSiteUrl()],
   build: {
     target: 'es2020',
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        gastos: 'gastos.html',
+      },
+    },
   },
 });

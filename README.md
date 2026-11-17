@@ -18,6 +18,17 @@ Feito com **React + Vite + TypeScript**, 100% estático e pronto para publicar n
   Checklist, favoritos, notas e progresso ficam salvos **só no navegador** (localStorage).
 - Link direto para um dia: `https://seu-site.vercel.app/#dia-3`.
 
+## Página de gastos (`/gastos`)
+
+Divisão dos gastos da viagem entre as 9 pessoas (casais Diego, Daniel e Juraci pagam 2 cotas; Abraão, Estevão
+e Gabriel, 1 cota cada). Mostra o total, quanto cada um pagou, **quem transfere para quem** (transferências
+diretas, sem intermediários), categorias e a lista completa de gastos.
+
+- Editar gastos ou pessoas: `src/gastos/data.ts` (valores em reais, convertidos para centavos).
+- Cálculo da divisão: `src/gastos/settle.ts`.
+- Na página dá para marcar transferências como pagas, copiar valores, enviar o resumo pelo WhatsApp e
+  adicionar gastos (esses dois últimos ficam salvos só no aparelho).
+
 ## Rodar localmente
 
 Requisitos: **Node.js 18+** (recomendado 20 ou 22).

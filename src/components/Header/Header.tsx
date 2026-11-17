@@ -1,4 +1,4 @@
-import { BookOpen, Heart, ListChecks, Share2, Sparkles } from 'lucide-react';
+import { BookOpen, Heart, ListChecks, Share2, Sparkles, Wallet } from 'lucide-react';
 import { useMotion } from '../../hooks/useMotion';
 import './Header.css';
 
@@ -34,9 +34,13 @@ export function Header({ solid, favoritesCount, checklistLeft, onOpenChecklist, 
           <a href="#resumo">Resumo</a>
           <a href="#roteiro">Roteiro</a>
           <a href="#mapa">Mapa</a>
+          <a href="/gastos.html">Gastos</a>
         </nav>
 
         <div className="site-header__actions">
+          <a className="icon-btn site-header__gastos" href="/gastos.html" aria-label="Gastos da viagem" title="Gastos da viagem">
+            <Wallet size={22} aria-hidden="true" />
+          </a>
           <button
             type="button"
             className="icon-btn"
