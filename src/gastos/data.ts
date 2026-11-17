@@ -43,6 +43,7 @@ const r = (reais: number) => Math.round(reais * 100);
 
 export const initialExpenses: Expense[] = [
   { id: 'e01', date: '2026-11-11', category: 'carro', description: 'Aluguel do carro', paidBy: [{ group: 'diego', cents: r(582) }] },
+  { id: 'e01b', date: '2026-11-11', category: 'carro', description: 'Aluguel do carro', paidBy: [{ group: 'daniel', cents: r(563.47) }] },
   { id: 'e02', date: '2026-11-11', category: 'mercado', description: 'Compras no Atacadão', paidBy: [{ group: 'diego', cents: r(212) }] },
   { id: 'e03', date: '2026-11-11', category: 'uber', description: 'Uber', paidBy: [{ group: 'daniel', cents: r(258.41) }] },
   { id: 'e04', date: '2026-11-11', category: 'uber', description: 'Uber', paidBy: [{ group: 'gabriel', cents: r(267.92) }] },
