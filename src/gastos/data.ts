@@ -77,4 +77,6 @@ export const initialExpenses: Expense[] = [
   { id: 'e17', date: '2026-11-16', category: 'gelo', description: 'Coca', paidBy: [{ group: 'diego', cents: r(15) }] },
   { id: 'e18', date: '2026-11-16', category: 'mercado', description: 'Mercado', paidBy: [{ group: 'diego', cents: r(75) }] },
   { id: 'e19', date: '2026-11-17', category: 'gelo', description: 'Gelo', paidBy: [{ group: 'juraci', cents: r(20) }] },
+  { id: 'e20', date: '2026-11-17', category: 'gasolina', description: 'Gasolina', paidBy: [{ group: 'diego', cents: r(172.95) }] },
+  { id: 'e21', date: '2026-11-17', category: 'gasolina', description: 'Gasolina', paidBy: [{ group: 'daniel', cents: r(191.43) }] },
 ];
