@@ -64,16 +64,8 @@ export const initialExpenses: Expense[] = [
     paidBy: [{ group: 'diego', cents: r(15), note: 'Ana Leia' }],
   },
   { id: 'e15', date: '2026-11-16', category: 'gelo', description: 'Gelo', paidBy: [{ group: 'diego', cents: r(8) }] },
-  {
-    id: 'e16',
-    date: '2026-11-16',
-    category: 'estacionamento',
-    description: 'Estacionamento (dividido entre Diego e Daniel)',
-    paidBy: [
-      { group: 'diego', cents: r(6.5) },
-      { group: 'daniel', cents: r(6.5) },
-    ],
-  },
+  { id: 'e16', date: '2026-11-16', category: 'estacionamento', description: 'Estacionamento', paidBy: [{ group: 'diego', cents: r(13) }] },
+  { id: 'e16b', date: '2026-11-16', category: 'estacionamento', description: 'Estacionamento', paidBy: [{ group: 'daniel', cents: r(13) }] },
   { id: 'e17', date: '2026-11-16', category: 'gelo', description: 'Coca', paidBy: [{ group: 'diego', cents: r(15) }] },
   { id: 'e18', date: '2026-11-16', category: 'mercado', description: 'Mercado', paidBy: [{ group: 'diego', cents: r(75) }] },
   { id: 'e19', date: '2026-11-17', category: 'gelo', description: 'Gelo', paidBy: [{ group: 'juraci', cents: r(20) }] },
